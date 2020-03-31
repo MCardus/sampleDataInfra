@@ -16,5 +16,7 @@ services:
       - mongodb
   postgres-seed:
     build: ./postgres-seed
+    environment:
+        - POSTGRES_PASSWORD
     depends_on:
       - postgreSQL
