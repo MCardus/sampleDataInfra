@@ -3,11 +3,13 @@ services:
   mongodb:
     image: mongo:4.1-xenial
     ports:
-    - "27017:27017"
+        - "27017:27017"
   postgreSQL:
     image: postgres:11-alpine
     ports:
-    - "5432:5432"
+        - "5432:5432"
+    environment:
+        - POSTGRES_PASSWORD
   mongo-seed:
     build: ./mongo-seed
     depends_on:
